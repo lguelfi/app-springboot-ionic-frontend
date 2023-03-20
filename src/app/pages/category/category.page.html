@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-fab horizontal="end" [edge]="true" routerDirection="root" [routerLink]="['/cart']">
+    <ion-fab-button>
+      <ion-icon name="cart"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+  <ion-toolbar>
+    <ion-title>Category</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button auto-hide="false"></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item button *ngFor="let item of items" (click)="showProducts(item.id)">
+      <ion-thumbnail item-start>
+        <img src="{{bucketUrl}}/cat{{item.id}}.jpg">
+      </ion-thumbnail>
+      <h2>{{item.name}}</h2>
+    </ion-item>
+  </ion-list>
+</ion-content>

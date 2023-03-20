@@ -1,0 +1,16 @@
+<ion-content>
+  <h3>Sistema de pedidos</h3>
+  <img src="assets/icon/favicon.png" alt="logo">
+  <form>
+    <ion-item>
+      <ion-label position="floating">Email</ion-label>
+      <ion-input [(ngModel)]="credentials.email" name="email" type="email" placeholder="Email"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Senha</ion-label>
+      <ion-input [(ngModel)]="credentials.password" name="password" type="password" placeholder="Senha"></ion-input>
+    </ion-item>
+    <ion-button expand="block" (click)="login()">Entrar</ion-button>
+  </form>
+  <ion-button expand="block" fill="outline" routerDirection="root" [routerLink]="['/signup']">Registrar</ion-button>
+</ion-content>

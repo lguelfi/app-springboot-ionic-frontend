@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="cart"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="titulo">Fechamento de pedido</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-list-header>Selecione o endereço</ion-list-header>
+    <ion-card button *ngFor="let item of items" (click)="nextPage(item)">
+      <ion-card-header>
+        <ion-card-title>
+          {{item.streetName}}, {{item.number}}
+        </ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        {{item.additionalInfo}} {{item.district}} CEP {{item.zipcode}}
+        {{item.city.name}}, {{item.city.state.name}}
+      </ion-card-content>
+    </ion-card>
+  </ion-list>
+</ion-content>
